@@ -1,32 +1,31 @@
 package lesson5.task3;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class SortArray {
     public static void main(String[] args) {
-        Integer[] arr = {2, 3, 6, 4, 20};
-        sortAscending(arr);
-        sortDescending(arr);
+        int[] arr = {2, 3, 6, 4, 20};
+        System.out.println(Arrays.toString(sortAscending(arr)));;
+        System.out.println(Arrays.toString(sortDescending(arr)));;
     }
 
 
 
-    public static void sortAscending(Integer[] array) {
-        //Сортируем массив
+    public static int[] sortAscending(int[] array) {
         Arrays.sort(array);
-        //Выводим отсортированный массив на консоль.
-        for (int j : array) {
-            System.out.print(j + "  ");
-        }
+        return array;
     }
 
-    public static void sortDescending(Integer[] array) {
-        //Сортируем массив
-        Arrays.sort(array, Collections.reverseOrder());
-        //Выводим отсортированный массив на консоль.
-        for (int j : array) {
-            System.out.print(j + "  ");
+    public static int[] sortDescending(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] >= array[j]) {
+                    int x = array[i];
+                    array[i] = array[j];
+                    array[j] = x;
+                }
+            }
         }
+        return array;
     }
 }
