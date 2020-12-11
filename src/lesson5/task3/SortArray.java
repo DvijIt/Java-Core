@@ -3,7 +3,7 @@ package lesson5.task3;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Task {
+public class SortArray {
     public static void main(String[] args) {
         Integer[] arr = {2, 3, 6, 4, 20};
         sortAscending(arr);
