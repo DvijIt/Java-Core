@@ -1,4 +1,4 @@
-package lesson5;
+package lesson5.task3;
 
 import java.util.Arrays;
 import java.util.Collections;
