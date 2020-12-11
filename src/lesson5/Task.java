@@ -3,9 +3,9 @@ package lesson5;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class ArraysSort {
+public class Task {
     public static void main(String[] args) {
-        Integer arr[] = {2, 3, 6, 4, 20};
+        Integer[] arr = {2, 3, 6, 4, 20};
         sortAscending(arr);
         sortDescending(arr);
     }
