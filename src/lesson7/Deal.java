@@ -1,4 +1,4 @@
-package lesson6.task4;
+package lesson7;
 
 import java.util.Date;
 
