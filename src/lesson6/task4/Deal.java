@@ -3,14 +3,14 @@ package lesson6.task4;
 import java.util.Date;
 
 public class Deal {
-    private long id;
-    private int price;
-    private Date dateCreated;
-    private boolean isConfirmed;
-    private Date dateConfirmed;
-    private String city;
-    private String country;
-    private String type;
+    long id;
+    int price;
+    Date dateCreated;
+    boolean isConfirmed;
+    Date dateConfirmed;
+    String city;
+    String country;
+    String type;
 
     public Deal() {}
 
@@ -25,26 +25,19 @@ public class Deal {
     }
 
 
-    public void confirmOrder(boolean status) {
-        isConfirmed = status;
+    public void confirmOrder() {
+        isConfirmed = true;
         dateConfirmed = new Date();
     }
 
     public boolean checkPrice() {
-        if(price > 1000) {
-            return true;
-        }
-
-        return false;
+        return price > 1000;
     }
 
     public boolean isValidType() {
-        if (type.equals("Sale")) {
+        if (type.equals("Buy")) {
             return true;
         }
-
-
-
-        return false;
+        return type.equals("Sale");
     }
 }
