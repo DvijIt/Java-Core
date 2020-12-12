@@ -4,11 +4,13 @@ import java.util.Date;
 
 public class Demo {
     public static void main(String[] args) {
-        Deal deal1 = createDealAndCallMethods();
+        Deal deal1 = createDeal();
+        Deal deal2 = createDealAndCallMethods();
     }
 
-    public static void createDeal() {
+    public static Deal createDeal() {
         Deal deal = new Deal(100, new Date(), false, null, "Dnepr", "Ukraine", "Buy");
+        return deal;
     }
 
     public static Deal createDealAndCallMethods() {
