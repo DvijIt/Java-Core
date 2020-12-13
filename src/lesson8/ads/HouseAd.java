@@ -6,8 +6,9 @@ public class HouseAd extends Ad {
     double square;
     int floors;
 
-    public HouseAd(long id, int price, String address, double square, int floors) {
-        super(id, price);
+    public HouseAd(long id, int prise, String ownerName, String address, double square, int floors) {
+        super(id, prise);
+        this.ownerName = ownerName;
         this.address = address;
         this.square = square;
         this.floors = floors;
@@ -17,7 +18,7 @@ public class HouseAd extends Ad {
         Owners owners = new Owners();
 
         for (String owner : owners.owners) {
-            if(ownerName == owner)
+            if(ownerName.equals(owner))
                 return true;
         }
         return false;

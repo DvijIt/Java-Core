@@ -3,14 +3,13 @@ package lesson8.ads;
 import java.util.Date;
 
 public class Message extends BaseEntity {
-    String userFrom;
-    String userTo;
+    User userFrom;
+    User userTo;
     Date dateSent;
     Date dateRead;
     String message;
 
-
-    public Message(long id ,String userFrom, String userTo, String message) {
+    public Message(long id, User userFrom, User userTo, String message) {
         super(id);
         this.userFrom = userFrom;
         this.userTo = userTo;
