@@ -1,7 +1,7 @@
 package lesson8.arithmetic;
 
 public class Adder extends Arithmetic {
-    int add(int a, int b) {
+    static int add(int a, int b) {
         return a + b;
     }
 }
