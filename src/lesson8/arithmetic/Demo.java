@@ -6,7 +6,7 @@ public class Demo {
         Arithmetic arithmetic = new Arithmetic();
         Adder adder = new Adder();
         arithmetic.check(arr);
-        System.out.println(Adder.check(arr));
-        System.out.println(Adder.add(2,6));
+        System.out.println(adder.check(arr));
+        System.out.println(adder.add(2,6));
     }
 }
