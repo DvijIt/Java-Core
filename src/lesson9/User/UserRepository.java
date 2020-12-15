@@ -12,7 +12,7 @@ public class UserRepository {
     }
 
     public String[] getUserNames() {
-        String[] namesArray = new String[users.length];
+        String[] namesArray = new String[countUsers()];
         int index = 0;
 
         for (User user : users) {
@@ -25,7 +25,7 @@ public class UserRepository {
     }
 
     public long[] getUserIds() {
-        long[] idsArray = new long[users.length];
+        long[] idsArray = new long[countUsers()];
         int index = 0;
 
         for (User user : users) {
@@ -53,7 +53,7 @@ public class UserRepository {
         return null;
     }
 
-    public User getUserById(long id) {
+    private User findById(long id) {
         for (User user : users) {
             if (id == user.getId())
                 return user;
@@ -67,5 +67,46 @@ public class UserRepository {
                 return user;
         }
         return null;
+    }
+
+    public User save(User user) {
+        if (user == null || findById(user.getId()) != null || countUsers() == users.length) return null;
+
+        int index = 0;
+        for (User us : users) {
+            if (us == null) return users[index] = user;
+            index++;
+        }
+        return null;
+    }
+
+    public User update(User user) {
+        if (user == null || findById(user.getId()) == null) return null;
+
+        int index = 0;
+        for (User us : users) {
+            if (us != null && us == findById(user.getId())) return users[index] = user;
+            index++;
+        }
+        return null;
+    }
+
+    public void delete(long id) {
+        int index = 0;
+        for (User user : users) {
+            if (user != null && user == findById(id)) {
+                users[index] = null;
+                break;
+            }
+            index++;
+        }
+    }
+
+    private int countUsers() {
+        int countUsers = 0;
+        for (User user : users) {
+            if (user != null) countUsers++;
+        }
+        return countUsers;
     }
 }
