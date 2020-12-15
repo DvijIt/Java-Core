@@ -1,4 +1,4 @@
-package lesson9.task3;
+package lesson9.User;
 
 public class UserRepository {
     private User[] users;
@@ -41,6 +41,30 @@ public class UserRepository {
         for (User user : users) {
             if (id == user.getId())
                 return user.getName();
+        }
+        return null;
+    }
+
+    public User getUserByName(String name) {
+        for (User user : users) {
+            if (name.equals(user.getName()))
+                return user;
+        }
+        return null;
+    }
+
+    public User getUserById(long id) {
+        for (User user : users) {
+            if (id == user.getId())
+                return user;
+        }
+        return null;
+    }
+
+    public User getUserBySessionId(String sessionId) {
+        for (User user : users) {
+            if (sessionId.equals(user.getSessionId()))
+                return user;
         }
         return null;
     }
