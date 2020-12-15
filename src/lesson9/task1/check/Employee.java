@@ -3,9 +3,9 @@ package lesson9.task1.check;
 import lesson9.task1.Company;
 
 public class Employee {
-    String name;
-    Company company;
-    int monthlySalary;
+    private String name;
+    private Company company;
+    private int monthlySalary;
 
 
     public Employee(String name, Company company, int monthlySalary) {
@@ -14,3 +14,4 @@ public class Employee {
         this.monthlySalary = monthlySalary;
     }
 }
+
