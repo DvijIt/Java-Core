@@ -4,15 +4,17 @@ import lesson9.task1.utils.Checker;
 
 public class Demo {
     public static void main(String[] args) {
-      /*
-        Company company = new Company();
-        System.out.println(company.getCountryFounded());
+        Company company = new Company("IBM", "USA");
+        //System.out.println(company.countryFounded);
         System.out.println(company.getName());
-        company. = "NewValue";
-        company.getName() = "IBM";
+
+
+
+        //  company.name = "IBM";
+
         Checker checker = new Checker();
-        System.out.println(checker.checkCompanyName(company.getName()));
-        //System.out.println(checker.companyNamesValidatedCount);
-        */
+        // System.out.println(checker.checkCompanyName(company.name));
+        //System.out.println(checker.companyNameValidatedCount);
     }
+
 }

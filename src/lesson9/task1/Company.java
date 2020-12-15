@@ -3,7 +3,9 @@ package lesson9.task1;
 public class Company {
     private String name;
     private String countryFounded;
+
     protected String code;
+
     public int someField;
 
     public Company(String name, String countryFounded) {
@@ -14,6 +16,10 @@ public class Company {
     public String getName() {
         return name;
     }
+
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getCountryFounded() {
         return countryFounded;
