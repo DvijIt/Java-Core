@@ -1,7 +1,17 @@
 package lesson9.task1.utils;
 
 public class Checker {
-    private int companyNamesValidatedCount = 0;
+    //public
+    //private - 90+%
+    //default (package-private)
+    //protected
+
+    //private
+    //default (package-private)
+    //protected
+    //public
+
+    int companyNamesValidatedCount = 0;
 
     public boolean checkCompanyName(String companyName) {
         if (companyNamesValidatedCount > 10)
