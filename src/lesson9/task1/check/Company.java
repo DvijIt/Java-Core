@@ -2,15 +2,15 @@ package lesson9.task1.check;
 
 public class Company {
     private String name;
-    private String countryFounded;
+    private String coutryFounded;
 
     protected String code;
 
     public int someField;
 
-    public Company(String name, String countryFounded) {
+    public Company(String name, String coutryFounded) {
         this.name = name;
-        this.countryFounded = countryFounded;
+        this.coutryFounded = coutryFounded;
     }
 
     public String getName() {
@@ -21,11 +21,11 @@ public class Company {
 //        this.name = name;
 //    }
 
-    public String getCountryFounded() {
-        return countryFounded;
+    public String coutryFounded() {
+        return coutryFounded;
     }
 
-    public void setCountryFounded(String countryFounded) {
-        this.countryFounded = countryFounded;
+    public void setСoutryFounded(String coutryFounded) {
+        this.coutryFounded = coutryFounded;
     }
 }
