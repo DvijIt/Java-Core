@@ -39,53 +39,67 @@ public class UserRepository {
 
     public String getUserNameById(long id) {
         for (User user : users) {
-            if (id == user.getId())
+            if (id == user.getId()) {
                 return user.getName();
+            }
         }
         return null;
     }
 
     public User getUserByName(String name) {
         for (User user : users) {
-            if (name.equals(user.getName()))
+            if (name.equals(user.getName())) {
                 return user;
+            }
         }
         return null;
     }
 
     private User findById(long id) {
         for (User user : users) {
-            if (id == user.getId())
+            if (id == user.getId()) {
                 return user;
+            }
         }
         return null;
     }
 
     public User getUserBySessionId(String sessionId) {
         for (User user : users) {
-            if (sessionId.equals(user.getSessionId()))
+            if (sessionId.equals(user.getSessionId())) {
                 return user;
+            }
+
         }
         return null;
     }
 
     public User save(User user) {
-        if (user == null || findById(user.getId()) != null || countUsers() == users.length) return null;
+        if (user == null || findById(user.getId()) != null) {
+            return null;
+        }
 
         int index = 0;
         for (User us : users) {
-            if (us == null) return users[index] = user;
+            if (us == null) {
+                users[index] = user;
+                return users[index];
+            }
             index++;
         }
         return null;
     }
 
     public User update(User user) {
-        if (user == null || findById(user.getId()) == null) return null;
+        if (user == null || findById(user.getId()) == null) {
+            return null;
+        }
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us == findById(user.getId())) return users[index] = user;
+            if (us != null && us == findById(user.getId())) {
+                return users[index] = user;
+            }
             index++;
         }
         return null;
@@ -105,7 +119,9 @@ public class UserRepository {
     private int countUsers() {
         int countUsers = 0;
         for (User user : users) {
-            if (user != null) countUsers++;
+            if (user != null) {
+                countUsers++;
+            }
         }
         return countUsers;
     }
