@@ -1,12 +1,10 @@
-package lesson13;
-
-import java.util.Arrays;
+package lesson15.task2;
 
 public class UserRepository {
-    private User[] users = new User[10];
+    private User[] users;
 
-    public User[] getUsers() {
-        return users;
+    public UserRepository(User[] users) {
+        this.users = users;
     }
 
     public String[] getUserNames() {
@@ -54,7 +52,6 @@ public class UserRepository {
         return null;
     }
 
-    //renamed from getUserById to findById + public -> private
     private User findById(long id) {
         for (User user : users) {
             if (user != null && user.getId() == id) {
@@ -106,12 +103,5 @@ public class UserRepository {
                 return;
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "UserRepository{" +
-                "users=" + Arrays.toString(users) +
-                '}';
     }
 }
