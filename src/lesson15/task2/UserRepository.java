@@ -7,6 +7,10 @@ public class UserRepository {
         this.users = users;
     }
 
+    public User[] getUsers() {
+        return users;
+    }
+
     private User findById(long id) {
         for (User user : users) {
             if (user != null && user.getId() == id) {
