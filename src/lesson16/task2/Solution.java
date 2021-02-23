@@ -8,6 +8,9 @@ public class Solution {
         System.out.println(maxWord(test));
         System.out.println(minWord(test));
         System.out.println(mostCountedWord(test));
+        System.out.println(validate("https://somesite.ua"));
+        System.out.println(validate("http://somesite.com"));
+        System.out.println(validate("http://somesite.net"));
     }
 
     public static int countWords(String input) {
@@ -82,5 +85,52 @@ public class Solution {
         }
         return res;
     }
+
+    public static boolean validate(String address) {
+        if (address == null || address.isBlank() || getDomainLength(address) == 0 || getProtocolLength(address) == 0)
+            return false;
+
+        return isValidAddressName(address);
+    }
+
+    public static int getProtocolLength(String address) {
+        String[] protocols = {"http://", "https://"};
+        for (String protocol : protocols) {
+            if (address.startsWith(protocol))
+                return protocol.length();
+        }
+
+        return 0;
+    }
+
+    public static int getDomainLength(String address) {
+        String[] domains = {".com", ".org", ".net"};
+
+        for (String domain : domains) {
+            if (address.endsWith(domain))
+                return domain.length();
+        }
+
+        return 0;
+    }
+
+    public static String getAddressName(String address) {
+
+
+        return address.substring(getProtocolLength(address), address.length() - getDomainLength(address));
+    }
+
+    public static boolean isValidAddressName(String address) {
+        char[] addressNameChars = getAddressName(address).toLowerCase().toCharArray();
+
+        for (char addressChar : addressNameChars) {
+            if (Character.isLetterOrDigit(addressChar)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+//    97 122
 
 }
