@@ -98,7 +98,7 @@ public class UserRepository {
     }
 
     public void delete(long id) throws Exception {
-        users.removeIf(user -> user.getId() == id);
+        users.remove(findById(id));
 
         throw new Exception("Unexpected error");
     }
