@@ -12,6 +12,8 @@ import lesson30.ItCompanyStructure.entityDAO.ProjectDAO;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Controller<T> {
 
@@ -49,8 +51,8 @@ public class Controller<T> {
     }
 
     // список руководителей для заданного сотрудника (по всем проектам, в которых он участвует)
-    public static ArrayList<Employee> teamLeadsByEmployee(Employee employee) {
-        ArrayList<Employee> teamLeads = new ArrayList<>();
+    public static Set<Employee> teamLeadsByEmployee(Employee employee) {
+        Set<Employee> teamLeads = new TreeSet<>();
 
         for (Project project : employee.getProjects()) {
             ArrayList<Employee> employeesByProject = EmployeeDAO.getEmployeesByProject(project);
@@ -65,9 +67,9 @@ public class Controller<T> {
     }
 
     // список сотрудников, участвующих в тех же проектах, что и заданный сотрудник
-    public static ArrayList<Employee> employeesByProjectEmployee(Employee employee) {
+    public static Set<Employee> employeesByProjectEmployee(Employee employee) {
         ArrayList<Project> projects = ProjectDAO.getProjects();
-        ArrayList<Employee> employeesWithSameProjects = new ArrayList<>();
+        Set<Employee> employeesWithSameProjects = new TreeSet<>();
         for (Project project : projects) {
             if (employee.getProjects().contains(project)) {
                 employeesWithSameProjects.addAll(EmployeeDAO.getEmployeesByProject(project));
@@ -90,8 +92,8 @@ public class Controller<T> {
     }
 
     // список сотрудников, участвующих в проектах, выполняемых для заданного заказчика
-    public static ArrayList<Employee>employeesByCustomerProjects(Customer customer) {
-        ArrayList<Employee> employeesForProjects = new ArrayList<>();
+    public static Set<Employee>employeesByCustomerProjects(Customer customer) {
+        Set<Employee> employeesForProjects = new TreeSet<>();
         for (Project project : projectsByCustomer(customer)) {
             employeesForProjects.addAll(EmployeeDAO.getEmployeesByProject(project));
         }

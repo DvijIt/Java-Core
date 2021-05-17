@@ -1,16 +1,10 @@
 package lesson30.ItCompanyStructure.entityDAO;
 
-import lesson30.ItCompanyStructure.entities.Customer;
-import lesson30.ItCompanyStructure.entities.Department;
 import lesson30.ItCompanyStructure.entities.Employee;
 import lesson30.ItCompanyStructure.entities.Project;
-import lesson30.ItCompanyStructure.entities.enums.DepartmentType;
 import lesson30.ItCompanyStructure.entities.enums.PositionType;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 public class EmployeeDAO {
     private static ArrayList<Employee> employees = new ArrayList<>();
@@ -53,16 +47,6 @@ public class EmployeeDAO {
 
     public static Employee getEmployeeByIndex(int index) {
         return EmployeeDAO.getEmployees().get(index);
-    }
-
-    public static Employee getEmployeeByType(PositionType type) throws Exception {
-        for (Employee employee: EmployeeDAO.getEmployees()) {
-            if (employee.getPosition().equals(type)) {
-                return employee;
-            }
-        };
-
-        throw new Exception("Employee is not defined");
     }
 
     public static ArrayList<Employee> getEmployeesByProject(Project project) {
