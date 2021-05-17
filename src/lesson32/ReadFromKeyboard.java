@@ -40,13 +40,14 @@ public class ReadFromKeyboard {
     }
 
     public static void validateInput(String input) throws IOException {
+        if (input.split(" ").length > 1) {
+            throw new IOException("Input must have one word");
+        }
+
         for (char cr : input.toCharArray()) {
             if (!Character.isLetter(cr)) {
                 throw new IOException("Input must have only letters");
             }
-        }
-        if (input.split(" ").length > 1) {
-            throw new IOException("Input must have one word");
         }
     }
 }
