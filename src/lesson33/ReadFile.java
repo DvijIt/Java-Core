@@ -7,9 +7,7 @@ import java.io.*;
 public class ReadFile {
 
     public static void main(String[] args) {
-        readFile("/home/andrey/Desktop/test.txt");
-        writeFile("/home/andrey/Desktop/test1.txt");
-        readFile("/home/andrey/Desktop/test1.txt");
+        writeFile("/home/andrey/Desktop/test2.txt");
     }
 
     private static void readFile(String path) {
