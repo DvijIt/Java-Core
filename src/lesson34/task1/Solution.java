@@ -1,11 +1,8 @@
-package lesson34;
+package lesson34.task1;
 
 import java.io.*;
 
-public class Practice {
-    public static void main(String[] args) throws Exception {
-        copyFileContent("/home/andrey/Desktop/test.txt", "/home/andrey/Desktop/test2.txt");
-    }
+public class Solution {
     public static void copyFileContent(String fileFromPath, String fileToPath) throws Exception {
         validate(fileFromPath, fileToPath);
         writeToFile(fileToPath, readFromFile(fileFromPath));
