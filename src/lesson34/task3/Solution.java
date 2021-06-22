@@ -10,8 +10,6 @@ import java.io.*;
 public class Solution {
     public static void transferSentences(String fileFromPath, String fileToPath, String wordToCheck) throws Exception {
         validate(fileFromPath, fileToPath);
-        ;
-        System.out.println(readFromFile(fileFromPath));
         String[] sentences = readFromFile(fileFromPath).toString().split("\\.");
 
         StringBuffer sentencesFromFile = new StringBuffer();
