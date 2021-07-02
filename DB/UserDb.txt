@@ -1,0 +1,8 @@
+    private Long id;
+    private String userName;
+    private String password;
+    private String country;
+    private UserType (ADMIN, USER);
+
+1022, Andrey, qwerty, Ukraine, ADMIN
+1023, Vitia, qwerty123, Ukraine, USER
