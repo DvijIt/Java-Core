@@ -9,6 +9,10 @@ public class UserService {
 
     public User registerUser(User user) {
         // check business logic
+        // 1. Вадидация
+        // 2. Проверка на сущетсвующего юзера
+        // 3. Формирование строки в базу
+        // 4. Запись в файл
 
         // if logic is ok
         return userRepository.registerUser(user);
